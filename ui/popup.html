@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Password Pattern Detector</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+  <div class="app-container">
+
+    <!-- Header -->
+    <div class="header-bar">
+      <div class="header-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        </svg>
+      </div>
+      <div class="header-title">Password Guard</div>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero-section">
+      <div class="hero-circle circle-blue" id="hero-circle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round"
+          stroke-linejoin="round" class="power-icon">
+          <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
+          <line x1="12" y1="2" x2="12" y2="12"></line>
+        </svg>
+      </div>
+      <div class="status-heading" id="status-heading">Monitoring Active</div>
+    </div>
+
+    <!-- Report Card -->
+    <div id="report" class="info-card">
+      <div class="card-hero">
+        <div class="flag-circle badge-low" id="risk-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          </svg>
+        </div>
+        <div class="card-titles">
+          <div class="card-main-title">Risk: <span id="risk-score">LOW</span></div>
+          <div class="card-sub-title">Score: <span id="numeric-score">0</span> / 10</div>
+        </div>
+      </div>
+      <div class="card-details">
+        <div class="details-label">Analysis Reasons:</div>
+        <ul id="reasons-list">
+          <li>No immediate risks detected.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- No Activity Card -->
+    <div id="no-activity" class="info-card center-card">
+      <div class="no-activity-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4da4ff" stroke-width="1.5" stroke-linecap="round"
+          stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+      </div>
+      <div class="card-main-title">No Password Activity</div>
+      <div class="card-sub-title">Monitoring this page for inputs…</div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-area">
+      <span class="footer-credit">
+        <P>Designed and Developed by<br>
+          <b>Mohit Jamaiwar</b>&emsp14; · &emsp14; Group A15
+        </P>
+      </span>
+    </div>
+
+  </div>
+  <script src="popup.js"></script>
+</body>
+
+</html>

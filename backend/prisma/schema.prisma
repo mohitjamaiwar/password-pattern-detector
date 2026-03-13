@@ -1,0 +1,42 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model PasswordFingerprint {
+  id            String   @id @default(cuid())
+  userId        String
+  site          String
+  passwordHash  String
+  structure     String
+  baseWord      String
+  numbers       String
+  symbols       String
+  createdAt     DateTime @default(now())
+
+  riskEvents    RiskEvent[]
+
+  @@index([userId, site])
+  @@index([userId, passwordHash])
+  @@index([userId, structure])
+}
+
+model RiskEvent {
+  id              String   @id @default(cuid())
+  userId          String
+  site            String
+  riskScore       String
+  numericScore    Int
+  reasonsJson     String
+  fingerprintId   String?
+  createdAt       DateTime @default(now())
+
+  fingerprint     PasswordFingerprint? @relation(fields: [fingerprintId], references: [id])
+
+  @@index([userId, createdAt])
+  @@index([riskScore, createdAt])
+}

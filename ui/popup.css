@@ -1,0 +1,229 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 340px;
+  background: #020b18;
+  background-image: radial-gradient(circle at 50% 0%, #0a2040 0%, #020b18 65%);
+  color: #fff;
+  overflow: hidden;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding-bottom: 10px;
+}
+
+/* ── Header ── */
+.header-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 20px 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.header-logo {
+  width: 32px; height: 32px;
+  background: linear-gradient(135deg, #4da4ff, #1771e6);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.header-logo svg { width: 18px; height: 18px; stroke: white; }
+
+.header-title {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  color: #e8f1ff;
+}
+
+/* ── Hero ── */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px 0 20px;
+}
+
+.hero-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+.circle-blue {
+  background: linear-gradient(145deg, #34d399, #059669);
+  box-shadow: 0 0 40px rgba(5,150,105,0.5), 0 8px 24px rgba(0,0,0,0.3);
+}
+.circle-orange {
+  background: linear-gradient(145deg, #ffbc4d, #e68e17);
+  box-shadow: 0 0 40px rgba(230,142,23,0.5), 0 8px 24px rgba(0,0,0,0.3);
+}
+.circle-red {
+  background: linear-gradient(145deg, #ff5c5c, #e61717);
+  box-shadow: 0 0 40px rgba(230,23,23,0.5), 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.power-icon { width: 40px; height: 40px; }
+
+.status-heading {
+  margin-top: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+/* ── Info Card ── */
+.info-card {
+  width: calc(100% - 32px);
+  margin: 0 auto 14px;
+  background: #11284a;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+
+.card-hero {
+  display: flex;
+  align-items: center;
+  padding: 16px 18px;
+}
+
+.flag-circle {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin-right: 14px;
+  flex-shrink: 0;
+}
+
+.flag-circle svg { width: 20px; height: 20px; }
+
+.badge-low      { background: #1f7a3f; }
+.badge-medium   { background: #a87000; }
+.badge-high     { background: #b45309; }
+.badge-critical { background: #b91c1c; }
+
+.card-titles { flex: 1; }
+.card-main-title { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+
+/* Score pills row */
+.score-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.score-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  padding: 3px 9px;
+  border-radius: 20px;
+}
+
+.rule-pill {
+  background: rgba(255,255,255,0.07);
+  color: #9ab0ca;
+}
+
+.ai-pill {
+  background: rgba(139,92,246,0.2);
+  color: #c4b5fd;
+  border: 1px solid rgba(139,92,246,0.35);
+}
+
+.ai-icon    { width: 12px; height: 12px; stroke: #c4b5fd; }
+.ai-icon-sm { width: 13px; height: 13px; stroke: #a78bfa; }
+
+.card-details {
+  background: #0d1e38;
+  padding: 14px 18px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.details-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #6b8aaa;
+  margin-bottom: 8px;
+}
+
+#reasons-list {
+  padding-left: 16px;
+  font-size: 13px;
+  color: #c5d9ef;
+  margin-bottom: 10px;
+}
+
+#reasons-list li { margin-bottom: 5px; line-height: 1.4; }
+
+/* AI Explanation box */
+.ai-explanation {
+  margin-top: 10px;
+  background: rgba(139,92,246,0.1);
+  border: 1px solid rgba(139,92,246,0.25);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.ai-explanation-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #a78bfa;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+#ai-explanation-text {
+  font-size: 12px;
+  color: #ddd6fe;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── No Activity Card ── */
+.center-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 20px;
+  gap: 8px;
+  text-align: center;
+}
+
+.no-activity-icon svg {
+  width: 36px; height: 36px;
+}
+
+/* ── Footer ── */
+.footer-area {
+  margin-top: auto;
+  padding: 12px 20px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  text-align: center;
+}
+
+.footer-credit {
+  font-size: 11px;
+  color: #536d8f;
+}
+
+.footer-credit b { color: #8eaac6; }
